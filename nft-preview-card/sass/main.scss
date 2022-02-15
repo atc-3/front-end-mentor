@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+// Fonts
+$outfit: 'Outfit',
+sans-serif;
+
+// Colors
+$fire-fly: hsl(217, 54%, 11%);
+$polo-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$cyan-transparent: rgba(0, 255, 247, 0.5);
+$white: hsl(0, 0%, 100%);
+$line: hsl(215, 32%, 27%);
+$big-stone: hsl(216, 50%, 16%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $outfit;
+    background-color: $fire-fly;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.card__link {
+    transition: color .7s;
+    text-decoration: none;
+    color: $white;
+
+    &:hover {
+        color: $cyan;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+        background-color: $big-stone;
+        padding: 24px;
+        border-radius: 15px;
+
+        &__img-wrapper {
+            position: relative;
+        }
+
+        &__img {
+            border-radius: 8px;
+        }
+
+        &__img-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all .7s;
+            background-color: $cyan-transparent;
+            opacity: 0;
+        }
+
+        &__img-wrapper:hover {
+            .card__img-overlay {
+                opacity: 1;
+            }
+        }
+
+        &__view-icon {
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &__content {
+            font-size: 16px;
+        }
+
+        &__title {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 24px 0 16px;
+        }
+
+        &__description {
+            font-size: 18px;
+            color: $polo-blue;
+            font-weight: 300;
+            margin: 16px 0 24px;
+            line-height: 1.44;
+        }
+
+        &__price-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__price-info,
+        &__expiration {
+            display: flex;
+            align-items: center;
+        }
+
+        &__eth-icon {
+            margin-right: 6.5px;
+        }
+
+        &__price {
+            color: $cyan;
+            font-weight: 600;
+        }
+
+        &__clock-icon {
+            margin-right: 9px;
+        }
+
+        &__time-left {
+            color: $polo-blue;
+        }
+
+        .divider {
+            display: block;
+            background-color: $line;
+            width: 100%;
+            height: 1px;
+            margin: 24px 0 16px;
+        }
+
+        &__creator {
+            display: flex;
+            align-items: center;
+        }
+
+        &__creator-img {
+            max-width: 33px;
+            max-height: 33px;
+            border-radius: 50%;
+            border: 1px solid $white;
+            margin-right: 16px;
+
+        }
+
+        &__creator-name {
+            color: $polo-blue;
+        }
+    }
+}
+
+.attribution {
+    text-align: center;
+}
+
+@media screen and (max-width: 375px) {
+    main {
+        .card {
+            max-width: 330px;
+
+            &__img {
+                max-width: 278px;
+            }
+
+            &__content {
+                font-size: 15px;
+            }
+        }
+    }
+}
