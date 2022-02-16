@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+// Fonts
+$spartan: 'Spartan',
+sans-serif;
+
+//Colors
+$magenta-dark: hsl(300, 43%, 22%);
+$soft-pink: hsl(333, 80%, 67%);
+
+$magenta-dark-gray: hsl(303, 10%, 53%);
+$magenta-gray-light: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+// Global Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    font-family: $spartan;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+main {
+    background-image:
+        url('./images/bg-pattern-top-mobile.svg'),
+        url('./images/bg-pattern-bottom-mobile.svg');
+    background-position:
+        left top,
+        right bottom;
+    background-repeat: no-repeat;
+    padding: 24px;
+}
+
+.product {
+    text-align: center;
+    margin: 80px 0 50px 0;
+
+
+    &__content {
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        color: $magenta-dark;
+        font-size: 32px;
+        letter-spacing: -1.14px;
+        line-height: 1;
+        font-weight: bold;
+        margin-bottom: 18px;
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        color: $magenta-dark-gray;
+        line-height: 1.67;
+        letter-spacing: -.5px;
+    }
+
+    &__ratings {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+// Rating block
+.rating {
+    width: 100%;
+    background-color: $magenta-gray-light;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+
+    &__stars {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    &__star {
+        margin: 0 4px;
+    }
+
+    &__description {
+        font-weight: bold;
+        color: $magenta-dark;
+        font-size: 13px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Card block
+.card {
+    background-color: $magenta-dark;
+    padding: 32px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 16px;
+
+    &__author {
+        display: flex;
+        align-items: center;
+        margin-top: 12px;
+        margin-bottom: 28px;
+    }
+
+    &__img {
+        margin-right: 23px;
+        border-radius: 50%;
+        max-width: 40px;
+        max-height: 40px;
+    }
+
+    &__name {
+        color: $white;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    &__status {
+        color: $soft-pink;
+
+    }
+
+    &__testimonial {
+        font-weight: 500;
+        color: $white;
+        line-height: 1.69;
+        letter-spacing: -0.23px;
+    }
+}
+
+.attribution {
+    text-align: center;
+}
+
+// Desktop styles
+
+@media screen and (min-width: 1200px) {
+
+    main {
+        background-image:
+            url('./images/bg-pattern-top-desktop.svg'),
+            url('./images/bg-pattern-bottom-desktop.svg');
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .product {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        margin-top: 128px;
+
+        &__content {
+            flex-basis: 50%;
+            margin-right: 210px;
+        }
+
+        &__title {
+            font-size: 48px;
+            letter-spacing: -1.71px;
+        }
+
+        &__ratings {
+            flex-basis: 50%;
+        }
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 20px 16px;
+
+        &:first-child {
+            margin-right: 95px;
+        }
+
+        &:nth-child(even) {
+            margin-right: 47px;
+            margin-left: 47px;
+        }
+
+        &:last-child {
+            margin-left: 95px;
+        }
+
+        &__stars {
+            margin-bottom: 0;
+        }
+    }
+
+    .reviews {
+        display: flex;
+        margin-bottom: 130px;
+    }
+
+    .card {
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+}
