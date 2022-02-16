@@ -114,6 +114,8 @@ main {
 @media screen and (min-width: 1200px) {
   main {
     background-image: url("./images/bg-pattern-top-desktop.svg"), url("./images/bg-pattern-bottom-desktop.svg");
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
   .container {
