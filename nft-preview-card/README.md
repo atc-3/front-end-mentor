@@ -1,3 +1,4 @@
-# Frontend Mentor - NFT preview card component
-
-![Design preview for the NFT preview card component coding challenge](./screenshot.png)
+div align="center">
+  <h1>Frontend Mentor - NFT preview card component</h1>
+  <img src="./screenshot.png">
+</div>
