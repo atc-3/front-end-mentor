@@ -1,7 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Spartan", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  background-image: url("./images/bg-pattern-top-mobile.svg"), url("./images/bg-pattern-bottom-mobile.svg");
+  background-position: left top, right bottom;
+  background-repeat: no-repeat;
+  padding: 24px;
+}
+
+.product {
+  text-align: center;
+  margin: 80px 0 50px 0;
+}
+.product__content {
+  margin-bottom: 40px;
+}
+.product__title {
+  color: #502050;
+  font-size: 32px;
+  letter-spacing: -1.14px;
+  line-height: 1;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+.product__subtitle {
+  font-weight: 500;
+  color: #937b92;
+  line-height: 1.67;
+  letter-spacing: -0.5px;
+}
+.product__ratings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rating {
+  width: 100%;
+  background-color: #f7f2f7;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+.rating__stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.rating__star {
+  margin: 0 4px;
+}
+.rating__description {
+  font-weight: bold;
+  color: #502050;
+  font-size: 13px;
+}
+.rating:last-child {
+  margin-bottom: 0;
+}
+
+.card {
+  background-color: #502050;
+  padding: 32px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.card__author {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 28px;
+}
+.card__img {
+  margin-right: 23px;
+  border-radius: 50%;
+  max-width: 40px;
+  max-height: 40px;
+}
+.card__name {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.card__status {
+  color: #ee68a4;
+}
+.card__testimonial {
+  font-weight: 500;
+  color: white;
+  line-height: 1.69;
+  letter-spacing: -0.23px;
+}
+
+.attribution {
+  text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    background-image: url("./images/bg-pattern-top-desktop.svg"), url("./images/bg-pattern-bottom-desktop.svg");
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .product {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-top: 128px;
+  }
+  .product__content {
+    flex-basis: 50%;
+    margin-right: 210px;
+  }
+  .product__title {
+    font-size: 48px;
+    letter-spacing: -1.71px;
+  }
+  .product__ratings {
+    flex-basis: 50%;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 16px;
+  }
+  .rating:first-child {
+    margin-right: 95px;
+  }
+  .rating:nth-child(even) {
+    margin-right: 47px;
+    margin-left: 47px;
+  }
+  .rating:last-child {
+    margin-left: 95px;
+  }
+  .rating__stars {
+    margin-bottom: 0;
+  }
+
+  .reviews {
+    display: flex;
+    margin-bottom: 130px;
+  }
+
+  .card:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
