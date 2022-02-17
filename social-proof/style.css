@@ -166,8 +166,19 @@ main {
     margin-bottom: 130px;
   }
 
+  .card {
+   position: relative; 
+  }
+  
   .card:not(:last-child) {
     margin-right: 30px;
+  }
+  
+  .card:nth-child(even){
+    top: 16px;
+  }
+  .card:last-child(){
+    top: 32px;
   }
 }
 
