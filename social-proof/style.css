@@ -177,7 +177,7 @@ main {
   .card:nth-child(even){
     top: 16px;
   }
-  .card:last-child(){
+  .card:nth-child(3){
     top: 32px;
   }
 }
