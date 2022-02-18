@@ -1,0 +1,128 @@
+$blue: rgb(102, 226, 220);
+$red: rgb(250, 116, 83);
+$orange: rgb(255, 185, 100);
+$white: rgb(252, 250, 249);
+$black: rgb(25, 24, 38);
+
+.bg-wrapper {
+    background: url('./assets/bg-main-mobile.png') no-repeat;
+    background-position: 1vw -30vh;
+}
+
+.nav {
+    padding: 40px 24px 24px 24px;
+}
+
+.hero {
+
+    .container {
+        margin-top: 40px;
+    }
+
+    &__heading,
+    &__subheading {
+        padding: 0 24px;
+    }
+
+    &__heading {
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 1.2;
+        letter-spacing: -.42px;
+        margin-bottom: 20px;
+    }
+
+    &__features {
+        margin-top: 150px;
+        background-color: $black;
+    }
+
+    &__grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__grid-item {
+        color: $white;
+    }
+
+    &__grid-item:first-child {
+        position: relative;
+        background: url('./assets/bg-pattern-2.svg') no-repeat center;
+        min-height: 420px;
+    }
+
+    &__grid-item-img {
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-height: 430px;
+    }
+
+    &__grid-item-content {
+        background-color: $red;
+        padding: 36px;
+        border-radius: 12px;
+    }
+
+    &__grid-item-heading {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1.25;
+        margin: 12px 0;
+    }
+
+    &__grid-item-desc {
+        font-size: 18px;
+        line-height: 1.56;
+        font-weight: normal;
+    }
+
+    &__grid-item-pricing {
+        margin: 36px 0 32px 0;
+    }
+
+    &__grid-item-price {
+        display: flex;
+        align-items: center;
+        font-size: 65px;
+        font-weight: bold;
+    }
+
+    &__grid-item-plan {
+        font-size: 20px;
+        font-weight: normal;
+        margin-left: 16px;
+    }
+
+    .btn:last-child {
+        margin-bottom: 12px;
+    }
+
+    .btn--dark {
+        margin-bottom: 16px;
+    }
+}
+
+footer {
+    margin-top: -8px;
+    .container {
+        padding: 24px;
+    }
+
+    .logo {
+        margin: 40px 0 32px 0;
+    }
+
+    .contact {
+        margin-bottom: 64px;
+        &__highlight {
+            font-weight: bold;
+        }
+    }
+
+    .icons {
+        margin-bottom: 80px;
+    }
+}

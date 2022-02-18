@@ -1,7 +1,28 @@
+// Load Font
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400;700&display=swap');
+
+// Colors
+$blue: rgb(102, 226, 220);
+$red: rgb(250, 116, 83);
+$orange: rgb(255, 185, 100);
+$white: rgb(252, 250, 249);
+$black: rgb(25, 24, 38);
+
+// Fonts
+$ibm: 'IBM Plex Sans',
+sans-serif;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: $ibm;
+    font-size: 16px;
+    background-color: $white;
+    color: $black;
 }
 
 img {
@@ -9,3 +30,6 @@ img {
     max-width: 100%;
 }
 
+p {
+    line-height: 1.63;
+}

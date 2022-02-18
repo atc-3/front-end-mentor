@@ -1,12 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  background-color: #fcfaf9;
+  color: #191826;
+}
+
 img {
   display: block;
   max-width: 100%;
+}
+
+p {
+  line-height: 1.63;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  padding: 17px 0;
+  background-color: #fcfaf9;
+  color: #191826;
+  width: 100%;
+}
+.btn__desc {
+  margin-left: 8px;
+}
+
+.btn.btn--dark {
+  background-color: #191826;
+  color: #fcfaf9;
+}
+
+.icons {
+  display: flex;
+}
+.icons__icon:not(:last-child) {
+  margin-right: 20px;
+}
+
+.bg-wrapper {
+  background: url("./assets/bg-main-mobile.png") no-repeat;
+  background-position: 1vw -30vh;
+}
+
+.nav {
+  padding: 40px 24px 24px 24px;
+}
+
+.hero .container {
+  margin-top: 40px;
+}
+.hero__heading, .hero__subheading {
+  padding: 0 24px;
+}
+.hero__heading {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.42px;
+  margin-bottom: 20px;
+}
+.hero__features {
+  margin-top: 150px;
+  background-color: #191826;
+}
+.hero__grid {
+  display: flex;
+  flex-direction: column;
+}
+.hero__grid-item {
+  color: #fcfaf9;
+}
+.hero__grid-item:first-child {
+  position: relative;
+  background: url("./assets/bg-pattern-2.svg") no-repeat center;
+  min-height: 420px;
+}
+.hero__grid-item-img {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 430px;
+}
+.hero__grid-item-content {
+  background-color: #fa7453;
+  padding: 36px;
+  border-radius: 12px;
+}
+.hero__grid-item-heading {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin: 12px 0;
+}
+.hero__grid-item-desc {
+  font-size: 18px;
+  line-height: 1.56;
+  font-weight: normal;
+}
+.hero__grid-item-pricing {
+  margin: 36px 0 32px 0;
+}
+.hero__grid-item-price {
+  display: flex;
+  align-items: center;
+  font-size: 65px;
+  font-weight: bold;
+}
+.hero__grid-item-plan {
+  font-size: 20px;
+  font-weight: normal;
+  margin-left: 16px;
+}
+.hero .btn:last-child {
+  margin-bottom: 12px;
+}
+.hero .btn--dark {
+  margin-bottom: 16px;
+}
+
+footer {
+  margin-top: -8px;
+}
+footer .container {
+  padding: 24px;
+}
+footer .logo {
+  margin: 40px 0 32px 0;
+}
+footer .contact {
+  margin-bottom: 64px;
+}
+footer .contact__highlight {
+  font-weight: bold;
+}
+footer .icons {
+  margin-bottom: 80px;
 }
 
 /*# sourceMappingURL=style.css.map */
