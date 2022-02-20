@@ -30,16 +30,32 @@ p {
   border-radius: 12px;
   border: none;
   padding: 17px 0;
-  background-color: #fcfaf9;
-  color: #191826;
   width: 100%;
+  cursor: pointer;
+  transition: all 0.4s;
 }
 .btn__desc {
   margin-left: 8px;
 }
 
+.btn.btn--white {
+  background-color: #fcfaf9;
+  color: #191826;
+}
+.btn.btn--white:hover {
+  background-color: #ffb964;
+}
+
 .btn.btn--dark {
   background-color: #191826;
+  color: white;
+}
+.btn.btn--dark:hover {
+  background-color: #66e2dc;
+}
+
+.btn.btn--dark:hover {
+  background-color: #66e2dc;
   color: #fcfaf9;
 }
 
@@ -49,14 +65,27 @@ p {
 .icons__icon:not(:last-child) {
   margin-right: 20px;
 }
+.icons__icon {
+  fill: #191826;
+  overflow: visible;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.icons__icon:hover {
+  fill: #ffb964;
+}
 
 .bg-wrapper {
   background: url("./assets/bg-main-mobile.png") no-repeat;
-  background-position: 1vw -30vh;
+  background-position: 0 -20vh;
 }
 
 .nav {
   padding: 40px 24px 24px 24px;
+}
+
+.bg-tablet {
+  display: none;
 }
 
 .hero .container {
@@ -81,10 +110,10 @@ p {
   flex-direction: column;
 }
 .hero__grid-item {
+  position: relative;
   color: #fcfaf9;
 }
 .hero__grid-item:first-child {
-  position: relative;
   background: url("./assets/bg-pattern-2.svg") no-repeat center;
   min-height: 420px;
 }
@@ -134,6 +163,7 @@ p {
 
 footer {
   margin-top: -8px;
+  background-color: #fcfaf9;
 }
 footer .container {
   padding: 24px;
@@ -149,6 +179,161 @@ footer .contact__highlight {
 }
 footer .icons {
   margin-bottom: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .bg-wrapper {
+    background: url("./assets/bg-pattern-1.svg") no-repeat, url("./assets/bg-main-tablet.png") no-repeat;
+    background-position: 105% -4%, -52vw -35vh;
+    background-size: 30%, auto;
+  }
+
+  .nav {
+    padding: 40px 24px 24px 40px;
+  }
+
+  .hero .container {
+    padding: 0 40px;
+  }
+  .hero__content {
+    max-width: 520px;
+  }
+  .hero__heading, .hero__subheading {
+    padding: 0;
+  }
+  .hero__heading {
+    font-size: 64px;
+    margin-bottom: 28px;
+  }
+  .hero__subheading {
+    font-size: 18px;
+  }
+  .hero__features {
+    position: relative;
+    background-position: center -50%;
+    background-color: #191826;
+    min-height: 600px;
+    margin-top: 285px;
+    border-radius: 12px;
+    min-width: 696px;
+  }
+  .hero .bg-tablet {
+    display: block;
+    position: absolute;
+    left: 32%;
+    top: -6%;
+    max-height: 400px;
+  }
+  .hero__grid {
+    flex-direction: row;
+  }
+  .hero__grid-item {
+    width: 50%;
+  }
+  .hero__grid-item:first-child {
+    background: initial;
+    margin-left: 25px;
+  }
+  .hero__grid-item-content {
+    position: absolute;
+    left: -38%;
+    top: 34%;
+    max-width: 400px;
+  }
+  .hero__grid-item-img {
+    top: -35%;
+    max-height: 556px;
+  }
+
+  footer {
+    margin-top: 160px;
+    padding: 0 40px;
+  }
+
+  .contact-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact,
+.contact__highlight {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    background: url("./assets/bg-main-desktop.png") no-repeat;
+    background-position: -10vw -20vh;
+    background-size: 115%;
+  }
+
+  .bg-wrapper {
+    background: url("./assets/bg-pattern-1.svg") no-repeat;
+    background-position: 100% -4%;
+  }
+
+  .nav {
+    max-width: 1110px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+    padding: 60px 24px 24px 0;
+  }
+
+  .hero .container {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .hero__content {
+    max-width: 60vw;
+  }
+  .hero__heading {
+    font-size: 88px;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+  .hero__subheading {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+  .hero .bg-tablet {
+    left: 29%;
+    max-height: initial;
+  }
+  .hero__grid-item-img {
+    top: -45%;
+    left: 70px;
+    transform: initial;
+    min-width: 312px;
+    max-height: 642px;
+  }
+  .hero__grid-item-content {
+    top: 18%;
+    left: -1%;
+    max-width: 446px;
+  }
+
+  footer {
+    background-color: initial;
+    margin-bottom: 90px;
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 0;
+  }
+  footer .logo {
+    margin: 0;
+    align-self: flex-start;
+  }
+  footer .contact,
+footer .icons {
+    margin-bottom: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

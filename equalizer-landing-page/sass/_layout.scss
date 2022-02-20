@@ -6,11 +6,15 @@ $black: rgb(25, 24, 38);
 
 .bg-wrapper {
     background: url('./assets/bg-main-mobile.png') no-repeat;
-    background-position: 1vw -30vh;
+    background-position: 0 -20vh;
 }
 
 .nav {
     padding: 40px 24px 24px 24px;
+}
+
+.bg-tablet {
+    display: none;
 }
 
 .hero {
@@ -43,11 +47,11 @@ $black: rgb(25, 24, 38);
     }
 
     &__grid-item {
+        position: relative;
         color: $white;
     }
 
     &__grid-item:first-child {
-        position: relative;
         background: url('./assets/bg-pattern-2.svg') no-repeat center;
         min-height: 420px;
     }
@@ -107,6 +111,8 @@ $black: rgb(25, 24, 38);
 
 footer {
     margin-top: -8px;
+    background-color: $white;
+
     .container {
         padding: 24px;
     }
@@ -117,6 +123,7 @@ footer {
 
     .contact {
         margin-bottom: 64px;
+
         &__highlight {
             font-weight: bold;
         }

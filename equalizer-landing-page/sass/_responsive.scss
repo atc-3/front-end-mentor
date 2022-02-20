@@ -1,0 +1,191 @@
+// Responsive layouts
+
+// Tablet
+@media screen and (min-width: 768px) {
+    .bg-wrapper {
+        background:
+            url('./assets/bg-pattern-1.svg') no-repeat,
+            url('./assets/bg-main-tablet.png') no-repeat;
+
+        background-position: 105% -4%, -52vw -35vh;
+        background-size: 30%, auto;
+    }
+
+    .nav {
+        padding: 40px 24px 24px 40px;
+    }
+
+    .hero {
+
+        .container {
+            padding: 0 40px;
+        }
+
+        &__content {
+            max-width: 520px;
+        }
+
+        &__heading,
+        &__subheading {
+            padding: 0;
+        }
+
+        &__heading {
+            font-size: 64px;
+            margin-bottom: 28px;
+        }
+
+        &__subheading {
+            font-size: 18px;
+        }
+
+
+        &__features {
+            position: relative;
+            background-position: center -50%;
+            background-color: $black;
+            min-height: 600px;
+            margin-top: 285px;
+            border-radius: 12px;
+            min-width: 696px;
+        }
+
+        .bg-tablet {
+            display: block;
+            position: absolute;
+            left: 32%;
+            top: -6%;
+            max-height: 400px;
+        }
+
+        &__grid {
+            flex-direction: row;
+        }
+
+        &__grid-item {
+            width: 50%;
+        }
+
+        &__grid-item:first-child {
+            background: initial;
+            margin-left: 25px;
+        }
+
+        &__grid-item-content {
+            position: absolute;
+            left: -38%;
+            top: 34%;
+            max-width: 400px;
+        }
+
+        &__grid-item-img {
+            top: -35%;
+            max-height: 556px;
+        }
+    }
+
+    footer {
+        margin-top: 160px;
+        padding: 0 40px;
+    }
+
+    .contact-us {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact,
+    .contact__highlight {
+        width: 50%;
+    }
+}
+
+// Desktop
+@media screen and (min-width: 1200px) {
+    body {
+        background: url('./assets/bg-main-desktop.png') no-repeat;
+        background-position: -10vw -20vh;
+        background-size: 115%;
+    }
+
+
+    .bg-wrapper {
+        background: url('./assets/bg-pattern-1.svg') no-repeat;
+        background-position: 100% -4%;
+    }
+
+    .nav {
+        max-width: 1110px;
+        margin: 0 auto;
+        margin-bottom: 90px;
+        padding: 60px 24px 24px 0;
+    }
+
+
+    .hero {
+        .container {
+            max-width: 1110px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        &__content {
+            max-width: 60vw;
+        }
+
+        &__heading {
+            font-size: 88px;
+            letter-spacing: -1px;
+            line-height: 1;
+            margin-bottom: 40px;
+        }
+
+        &__subheading {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .bg-tablet {
+            left: 29%;
+            max-height: initial;
+        }
+
+        &__grid-item-img {
+            top: -45%;
+            left: 70px;
+            transform: initial;
+            min-width: 312px;
+            max-height: 642px;
+        }
+
+        &__grid-item-content {
+            top: 18%;
+            left: -1%;
+            max-width: 446px;
+        }
+    }
+
+    footer {
+        background-color: initial;
+        margin-bottom: 90px;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 0;
+        }
+
+        .logo {
+            margin: 0;
+            align-self: flex-start;
+        }
+
+        .contact,
+        .icons {
+            margin-bottom: 0;
+        }
+    }
+}

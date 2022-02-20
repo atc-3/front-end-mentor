@@ -9,20 +9,38 @@
     border-radius: 12px;
     border: none;
     padding: 17px 0;
-    background-color: $white;
-    color: $black;
     width: 100%;
+    cursor: pointer;
+    transition: all .4s;
 
     &__desc {
         margin-left: 8px;
     }
 }
 
-.btn.btn--dark {
-    background-color: $black;
-    color: $white;
+.btn.btn--white {
+    background-color: $white;
+    color: $black;
+
+    &:hover {
+        background-color: $orange;
+    }
 }
 
+
+.btn.btn--dark {
+    background-color: $black;
+    color: white;
+
+    &:hover {
+        background-color: $blue;
+    }
+}
+
+.btn.btn--dark:hover {
+    background-color: $blue;
+    color: $white;
+}
 
 // icons
 
@@ -31,5 +49,16 @@
 
     &__icon:not(:last-child) {
         margin-right: 20px;
+    }
+
+    &__icon {
+        fill: #191826;
+        overflow: visible;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            fill: $orange;
+        }
     }
 }
