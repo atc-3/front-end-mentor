@@ -1,0 +1,57 @@
+// Colors
+$primary-color: rgb(77, 150, 168);
+$primary-light-color: rgb(143, 227, 249);
+$primary-button-hover-color: rgb(113, 192, 212);
+
+$secondary-color: rgb(133, 95, 177);
+$secondary-light-color: rgb(217, 184, 255);
+$secondary-button-hover-color: rgb(177, 139, 221);
+
+$main-heading-color: rgb(40, 40, 61);
+$text-color: rgb(135, 135, 157);
+$bg-color: rgb(250, 250, 250);
+$white: rgb(255, 255, 255);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 900;
+    color: $main-heading-color;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    line-height: 1.63;
+    letter-spacing: 4px;
+    color: $primary-color;
+}
+
+p {
+    font-weight: 500;
+    line-height: 1.63;
+    color: $text-color;
+}
