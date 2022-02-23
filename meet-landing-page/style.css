@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,9 @@ html {
 
 body {
   font-size: 1.6rem;
+  font-family: "Red Hat Display", sans-serif;
+  background-color: #fafafa;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 h1,
@@ -38,6 +42,357 @@ p {
   font-weight: 500;
   line-height: 1.63;
   color: #87879d;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.logo {
+  margin: 0 auto;
+  margin-top: 4.8rem;
+  margin-bottom: 5.6rem;
+}
+
+.btn {
+  font-size: 1.6rem;
+  border: none;
+  padding: 1.6rem 4rem;
+  border-radius: 2.9rem;
+  font-weight: 900;
+  line-height: 1.63;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn.btn--primary {
+  background-color: #4d96a8;
+}
+.btn.btn--primary:hover {
+  background-color: #71c0d4;
+}
+.btn.btn--primary > span {
+  color: #8fe3f9;
+  margin-left: 0.4rem;
+}
+.btn.btn--secondary {
+  background-color: #855fb1;
+  padding: 1.6rem 2.9rem;
+}
+.btn.btn--secondary:hover {
+  background-color: #b18bdd;
+}
+.btn.btn--secondary > span {
+  color: #d9b8ff;
+  margin-left: 0.4rem;
+}
+
+.divider {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 5.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 6.4rem 0;
+}
+.divider__line {
+  display: block;
+  width: 0.1rem;
+  height: 8.4rem;
+  background-color: #87879d;
+  opacity: 0.25;
+}
+.divider__number {
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+  color: #87879d;
+  padding: 1.5rem 1.9rem;
+  border-radius: 2.9rem;
+  border: 0.1rem solid rgba(135, 135, 157, 0.25);
+  background-color: #fafafa;
+  max-width: 5.6rem;
+}
+
+.divider:last-child {
+  margin-bottom: -8%;
+  z-index: 100;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero__img {
+  position: relative;
+  width: 50%;
+}
+.hero__img:first-child {
+  left: -5%;
+}
+.hero__img:last-child {
+  order: 2;
+  right: -5%;
+}
+.hero__content {
+  width: 100%;
+  order: 3;
+  text-align: center;
+  padding: 0 2.4rem;
+  margin-top: 4.8rem;
+}
+.hero__heading {
+  margin-bottom: 2.4rem;
+}
+.hero__subheading {
+  margin-bottom: 3.2rem;
+}
+.hero .btn.btn--primary {
+  margin-bottom: 1.6rem;
+}
+
+.meeting .container {
+  padding: 0 2.4rem;
+}
+.meeting__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+.meeting__grid-img {
+  border-radius: 0.8rem;
+}
+.meeting__content {
+  text-align: center;
+  margin-top: 6.4rem;
+}
+.meeting__subheading {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+.meeting__heading {
+  margin-bottom: 3.2rem;
+  line-height: 1.13;
+}
+
+.experience {
+  background: url("./assets/mobile/image-footer.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.experience .container {
+  position: relative;
+  padding: 0 2.4rem;
+  text-align: center;
+  padding-top: 9.2rem;
+  z-index: 100;
+}
+.experience .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(77, 150, 168, 0.8);
+  z-index: 2;
+}
+.experience__heading {
+  color: white;
+  margin-bottom: 2.4rem;
+  z-index: 100;
+}
+.experience__desc {
+  margin-bottom: 3.2rem;
+  color: white;
+}
+.experience .btn--secondary {
+  padding: 1.6rem 4rem;
+  margin-bottom: 7.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .divider.one {
+    margin-top: 8rem;
+  }
+
+  .hero {
+    justify-content: center;
+  }
+  .hero .logo {
+    margin-top: 5.1rem;
+    margin-bottom: 6.6rem;
+  }
+  .hero__img {
+    position: relative;
+    width: 50%;
+    max-width: 39.4rem;
+  }
+  .hero__img:first-child {
+    left: -3%;
+  }
+  .hero__img:last-child {
+    order: 2;
+    right: -3%;
+  }
+  .hero__content {
+    max-width: 45.7rem;
+    margin-top: 7.2rem;
+  }
+  .hero__heading {
+    font-size: 4.8rem;
+    line-height: 1;
+  }
+  .hero .btn--primary {
+    margin-right: 1.6rem;
+  }
+
+  .meeting .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 4rem;
+  }
+  .meeting__grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 1.1rem;
+  }
+  .meeting__content {
+    max-width: 57.3rem;
+  }
+  .meeting__subheading {
+    margin-bottom: 1.6rem;
+  }
+  .meeting__heading {
+    font-size: 4rem;
+    max-width: 44.5rem;
+    margin: 0 auto;
+    margin-bottom: 3.2rem;
+  }
+
+  .divider.two {
+    margin-bottom: -4%;
+    margin-top: 8rem;
+  }
+
+  .experience .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 57.3rem;
+    margin: 0 auto;
+  }
+  .experience__heading {
+    font-size: 4rem;
+    max-width: 45.7rem;
+  }
+  .experience__desc {
+    font-size: 1.8rem;
+  }
+  .experience .btn--secondary {
+    margin-bottom: 6.6rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  p {
+    font-size: 1.8rem;
+    line-height: 1.44;
+  }
+
+  .logo {
+    margin-top: 8rem;
+    margin-bottom: 10.8rem;
+  }
+
+  .hero {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .hero__img {
+    width: initial;
+  }
+  .hero__content {
+    order: 2;
+    padding: 0;
+    margin: 0 8.8rem;
+  }
+  .hero__img:last-child {
+    order: 3;
+  }
+  .hero__heading {
+    font-size: 6.4rem;
+    margin-bottom: 3.4rem;
+  }
+  .hero .btn.btn--primary {
+    margin-bottom: 0;
+  }
+
+  .divider.one {
+    margin-top: 11.8rem;
+  }
+
+  .meeting .container {
+    max-width: 111rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .meeting__grid {
+    gap: 3rem;
+  }
+  .meeting__content {
+    margin-top: 8rem;
+  }
+  .meeting__heading {
+    font-size: 4rem;
+  }
+  .meeting__desc {
+    max-width: 54rem;
+  }
+
+  .divider.two {
+    margin-bottom: -2%;
+    margin-top: 7.2rem;
+  }
+
+  .experience {
+    background: url("./assets/desktop/image-footer.jpg");
+  }
+  .experience .container {
+    flex-direction: row;
+    align-items: center;
+    max-width: 111rem;
+    text-align: left;
+    padding: 11.6rem 0 10.4rem 0;
+  }
+  .experience__heading, .experience__desc,
+.experience .btn--secondary {
+    margin: 0;
+  }
+  .experience__heading {
+    line-height: 1.1;
+    margin-right: 12.5rem;
+    max-width: 35rem;
+  }
+  .experience__desc {
+    max-width: 35rem;
+    margin-right: 9.2rem;
+  }
+  .experience .btn--secondary {
+    min-width: 19.3rem;
+    padding: 1.6rem 2.9rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

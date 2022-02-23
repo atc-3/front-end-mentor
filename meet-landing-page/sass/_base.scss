@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;900&display=swap');
+
+// Fonts
+$red-hat: 'Red Hat Display',
+sans-serif;
+
 // Colors
 $primary-color: rgb(77, 150, 168);
 $primary-light-color: rgb(143, 227, 249);
@@ -12,6 +18,15 @@ $text-color: rgb(135, 135, 157);
 $bg-color: rgb(250, 250, 250);
 $white: rgb(255, 255, 255);
 
+$border-color: rgba(135, 135, 157, 0.25);
+$overlay-bg-color: rgba(77, 150, 168, 0.8);
+
+// Breakpoints
+$tablet: 768px;
+$desktop: 1440px;
+
+
+// Base styles
 
 * {
     margin: 0;
@@ -26,6 +41,9 @@ html {
 
 body {
     font-size: 1.6rem;
+    font-family: $red-hat;
+    background-color: $bg-color;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 h1,
@@ -54,4 +72,13 @@ p {
     font-weight: 500;
     line-height: 1.63;
     color: $text-color;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font-family: $red-hat;
 }
