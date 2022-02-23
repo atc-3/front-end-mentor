@@ -367,7 +367,8 @@ button {
   }
 
   .experience {
-    background: url("./assets/desktop/image-footer.jpg");
+    background: url("./assets/desktop/image-footer.jpg") no-repeat;
+    background-size: cover;
   }
   .experience .container {
     flex-direction: row;
