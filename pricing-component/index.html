@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
-
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main class="pricing">
+    <h1 class="pricing__heading"> Simple, traffic-based pricing</h1>
+    <p class="pricing__text">Sign-up for our 30-day trial. No credit card required.</p>
+    <div class="pricing__component">
+      <div class="top">
+        <div class="pricing__cost">
+          <p class="pricing__views">10k Pageviews</p>
+          <p class="pricing__price">$8.00 <span class="pricing__plan">/ month</span></p>
+          <input type="range" min="0" max="4" value="0" class="pricing__slider">
+        </div>
+        <div class="pricing__billing">
+          <p class="pricing__monthly"> Monthly Billing</p>
+          <label class="switch">
+            <input type="checkbox" class="switch__input">
+            <span class="switch__toggle round"></span>
+          </label>
+          <p class="pricing__yearly">Yearly Billing <span class="pricing__discount"> 25% discount</span></p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="bottom">
+        <ul class="pricing__list">
+          <li class="pricing__list-item">
+            <img src="./images/icon-check.svg" alt="checkmark" class="pricing__check">
+            <p class="pricing__list-text">Unlimited websites</p>
+          </li>
+          <li class="pricing__list-item">
+            <img src="./images/icon-check.svg" alt="checkmark" class="pricing__check">
+            <p class="pricing__list-text">100% data ownership</p>
+          </li>
+          <li class="pricing__list-item">
+            <img src="./images/icon-check.svg" alt="checkmark" class="pricing__check">
+            <p class="pricing__list-text">Email reports</p>
+          </li>
+        </ul>
+        <button class="pricing__free-trial">Start my trial</button>
+      </div>
+    </div>
+  </main>
+  <script src="./app.js"></script>
 </body>
+
 </html>

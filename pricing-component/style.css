@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: #fafbff;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: #fafbff;
+  background: url("./images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100%;
+}
+
+p {
+  color: #858fad;
+}
+
+main {
+  background: url("./images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center 20%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 4.3rem;
+  height: 2.2rem;
+  margin: 0 1.6rem;
+}
+.switch__toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cdd7ee;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border: none;
+}
+.switch__toggle:before {
+  position: absolute;
+  content: "";
+  height: 1.4rem;
+  width: 1.4rem;
+  left: 0.4rem;
+  bottom: 0.4rem;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.switch__toggle.round {
+  border-radius: 3.4rem;
+}
+.switch__toggle.round:before {
+  border-radius: 50%;
+}
+.switch__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch__input:checked + .switch__toggle {
+  background-color: #10d5c2;
+}
+.switch__input:focus + .switch__toggle {
+  box-shadow: 0 0 0.1rem #2196F3;
+}
+.switch__input:checked + .switch__toggle:before {
+  -webkit-transform: translateX(2rem);
+  -ms-transform: translateX(2rem);
+  transform: translateX(2rem);
+}
+
+.divider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0.1rem;
+  background-color: #eaeefb;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 54rem;
+  margin: 0 auto;
+  height: 100vh;
+}
+.pricing__heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #293356;
+  margin-bottom: 1.2rem;
+}
+.pricing__text {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.pricing__component {
+  position: relative;
+  width: 100%;
+  margin-top: 9.6rem;
+  padding: 4rem 4.8rem 3.3rem 4.6rem;
+  background-color: #ffffff;
+  box-shadow: 0 20px 30px -5px rgba(127, 137, 185, 0.15);
+  border-radius: 0.8rem;
+}
+.pricing__cost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 6rem;
+}
+.pricing__views {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+.pricing__price {
+  display: flex;
+  align-items: center;
+  font-size: 4rem;
+  color: #293356;
+  letter-spacing: -0.1rem;
+  font-weight: 800;
+}
+.pricing__plan {
+  font-size: 1.6rem;
+  color: #858fad;
+  font-weight: 600;
+  margin-left: 0.8rem;
+}
+.pricing__slider {
+  -webkit-appearance: none;
+  outline: none;
+  border-radius: 0.5rem;
+  background-color: #eaeefb;
+  border-radius: 0.5rem;
+  height: 0.8rem;
+  width: 100%;
+  margin-top: 4rem;
+}
+.pricing__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border-radius: 50%;
+  background: url("./images/icon-slider.svg");
+  background-color: #10d5c2;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  box-shadow: 0 1.5rem 3rem 0 rgba(0, 255, 231, 0.6);
+  margin-top: -1.6rem;
+}
+.pricing__slider::-ms-thumb {
+  -webkit-appearance: none;
+  border-radius: 50%;
+  background: url("./images/icon-slider.svg");
+  background-color: #10d5c2;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  box-shadow: 0 1.5rem 3rem 0 rgba(0, 255, 231, 0.6);
+  margin-top: -1.5rem;
+}
+.pricing__slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  border-radius: 50%;
+  background: url("./images/icon-slider.svg");
+  background-color: #10d5c2;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  box-shadow: 0 1.5rem 3rem 0 rgba(0, 255, 231, 0.6);
+}
+.pricing__slider::-webkit-slider-runnable-track {
+  background-color: #a5f3eb;
+  height: 0.8rem;
+}
+.pricing__slider::-moz-range-progress {
+  background-color: #a5f3eb;
+  height: 0.8rem;
+}
+.pricing__slider::-ms-fill-lower {
+  background-color: #a5f3eb;
+  height: 0.8rem;
+}
+.pricing__billing {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 4rem;
+}
+.pricing__yearly, .pricing__monthly {
+  font-size: 1.2rem;
+}
+.pricing__discount {
+  margin-left: 1rem;
+  color: #ff8c66;
+  background-color: #feece7;
+  padding: 2px 7px 3px 6px;
+  border-radius: 0.95rem;
+  font-size: 1rem;
+}
+.pricing .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 7rem;
+}
+.pricing__list {
+  list-style-type: none;
+}
+.pricing__list-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.pricing__list-item:not(:last-child) {
+  margin-bottom: 1.1rem;
+}
+.pricing__check {
+  margin-right: 1.6rem;
+}
+.pricing__free-trial {
+  font-size: 1.2rem;
+  color: #bdccff;
+  background-color: #293356;
+  padding: 1.2rem 4.6rem 1.3rem;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    background-size: 100% 52vh;
+  }
+
+  main {
+    background-position: center 7%;
+  }
+
+  .pricing {
+    padding: 0 2.4rem;
+  }
+  .pricing__heading {
+    font-size: 2rem;
+    margin-top: 4rem;
+  }
+  .pricing__text {
+    font-size: 1.3rem;
+    max-width: 55%;
+    text-align: center;
+    line-height: 1.77;
+  }
+  .pricing__component {
+    text-align: center;
+    padding: 3.2rem 1.2rem;
+    margin-top: 6.4rem;
+  }
+  .pricing__cost {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  .pricing__views {
+    font-size: 1.2rem;
+  }
+  .pricing__price {
+    font-size: 3.2rem;
+    order: 3;
+  }
+  .pricing__plan {
+    font-size: 1.4rem;
+  }
+  .pricing__slider {
+    order: 2;
+    margin-bottom: 4rem;
+  }
+  .pricing__yearly:after {
+    content: "-25%";
+    margin-left: 1rem;
+    color: #ff8c66;
+    background-color: #feece7;
+    padding: 2px 7px 3px 6px;
+    border-radius: 0.95rem;
+    font-size: 1rem;
+  }
+  .pricing__discount {
+    display: none;
+  }
+  .pricing .bottom {
+    flex-direction: column;
+  }
+  .pricing__free-trial {
+    margin-top: 3.3rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
