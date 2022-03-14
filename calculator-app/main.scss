@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+$spartan: 'Spartan',
+sans-serif;
+
+// Themes
+
+body[data-theme="dark"] {
+    --main-bg: hsl(222, 26%, 31%);
+    --toggle-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+    --key-bg-dark: hsl(225, 21%, 49%);
+    --key-shadow-dark: hsl(224, 28%, 35%);
+    --key-bg: hsl(6, 63%, 50%);
+    --key-shadow: hsl(6, 70%, 34%);
+    --key-bg-light: hsl(30, 25%, 89%);
+    --key-shadow-light: hsl(28, 16%, 65%);
+    --key-hover-light: hsl(60, 100%, 100%);
+    --key-hover-dark: hsl(225, 51%, 76%);
+    --key-hover: hsl(6, 93%, 67%);
+    --text-color: hsl(221, 14%, 31%);
+    --white: hsl(0, 0, 100%);
+
+    .themes,
+    .number {
+        color: white;
+    }
+
+}
+
+body[data-theme="light"] {
+    --main-bg: hsl(0, 0%, 90%);
+    --toggle-bg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 0%, 93%);
+    --key-bg-dark: hsl(185, 42%, 37%);
+    --key-shadow-dark: hsl(185, 58%, 25%);
+    --key-bg: hsl(25, 98%, 40%);
+    --key-shadow: hsl(25, 99%, 27%);
+    --key-bg-light: hsl(45, 7%, 89%);
+    --key-shadow-light: hsl(35, 11%, 61%);
+    --key-hover-light: hsl(0, 0%, 100%);
+    --key-hover-dark: hsl(185, 40%, 56%);
+    --key-hover: hsl(25, 100%, 61%);
+    --text-color: hsl(60, 10%, 19%);
+    --white: hsl(0, 0, 100%);
+}
+
+body[data-theme="ugly"] {
+    --main-bg: hsl(268, 75%, 9%);
+    --toggle-bg: hsl(268, 71%, 12%);
+    --screen-bg: var(--toggle-bg);
+    --key-bg-dark: hsl(281, 89%, 26%);
+    --key-shadow-dark: hsl(285, 91%, 52%);
+    --key-bg: hsl(176, 100%, 44%);
+    --key-shadow: hsl(177, 92%, 70%);
+    --key-bg-light: hsl(268, 47%, 21%);
+    --key-shadow-light: hsl(290, 70%, 36%);
+    --key-hover-light: hsl(268, 54%, 44%);
+    --key-hover-dark: hsl(280, 56%, 44%);
+    --key-hover: hsl(176, 100%, 79%);
+    --text-color: hsl(52, 100%, 62%);
+    --white: hsl(0, 0, 100%);
+}
+
+@mixin thumb-styles {
+    background-color: var(--key-bg);
+    border: none;
+    border-radius: 5rem;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $spartan;
+    background-color: var(--main-bg);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button {
+    font-size: 2.8rem;
+    color: var(--text-color);
+    background-color: var(--key-bg-light);
+    box-shadow: inset 0 -4px 0 0 var(--key-shadow-light);
+    border: none;
+    border-radius: .5rem;
+    padding: 1rem 1rem 1.4rem;
+    transition: all .1s;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:active {
+    background-color: var(--key-hover-light);
+}
+
+.calculator {
+    padding: 3.2rem 2.4rem;
+    width: 100%;
+    max-width: 54rem;
+
+    .themes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-color);
+        margin-bottom: 3.2rem;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    .theme-selection {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    p {
+        text-transform: uppercase;
+        margin-bottom: .7rem;
+        margin-right: 2rem;
+        letter-spacing: .1rem;
+    }
+
+
+    .choose {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .numbers {
+        margin-bottom: .5rem;
+    }
+
+
+    span {
+        font-size: 1.2rem;
+
+        &:nth-child(2) {
+            margin: 0 1.2rem;
+        }
+    }
+
+    .select-theme {
+        max-width: 7.1rem;
+        -webkit-appearance: none;
+        background-color: var(--toggle-bg);
+        border-radius: 1.3rem;
+        padding: .5rem;
+
+        &:active {
+            cursor: pointer;
+        }
+
+        &::-moz-range-thumb {
+            @include thumb-styles();
+        }
+
+        &::-webkit-slider-thumb {
+            @include thumb-styles();
+        }
+    }
+
+
+    .display {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: var(--screen-bg);
+        border-radius: 1rem;
+        min-height: 8.8rem;
+        padding: 2.6rem 2.4rem;
+        margin-bottom: 2.4rem;
+    }
+
+    .number {
+        margin: 0;
+        color: var(--text-color);
+        font-size: 3.2rem;
+
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 1.3rem;
+        padding: 2.4rem;
+        background-color: var(--toggle-bg);
+        border-radius: 1rem;
+    }
+
+    .delete,
+    .reset {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        background-color: var(--key-bg-dark);
+        box-shadow: inset 0 -4px 0 0 var(--key-shadow-dark);
+        color: white;
+
+        &:active {
+            background-color: var(--key-hover-dark);
+        }
+    }
+
+    .reset,
+    .equal {
+        grid-column: span 2;
+    }
+
+    .equal {
+        color: white;
+        background-color: var(--key-bg);
+        box-shadow: inset 0 -4px 0 0 var(--key-shadow);
+
+        &:active {
+            background-color: var(--key-hover);
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .calculator {
+        .buttons {
+            gap: 2.4rem;
+        }
+    }
+}
