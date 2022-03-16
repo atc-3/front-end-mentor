@@ -181,6 +181,7 @@ button:active {
 
     .display {
         display: flex;
+        flex-wrap: wrap;
         justify-content: flex-end;
         align-items: center;
         background-color: var(--screen-bg);
@@ -188,13 +189,14 @@ button:active {
         min-height: 8.8rem;
         padding: 2.6rem 2.4rem;
         margin-bottom: 2.4rem;
+        word-wrap: break-word;
     }
 
     .number {
         margin: 0;
         color: var(--text-color);
         font-size: 3.2rem;
-
+        max-width: 100%;
     }
 
     .buttons {
