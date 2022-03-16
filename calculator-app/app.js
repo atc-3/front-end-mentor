@@ -29,8 +29,6 @@ class Calculator {
             return;
         }
         screen.textContent += buttonValue;
-        console.log(`typeof: ${typeof lastChar}`);
-        console.log(`lostchar : ${lastChar}`);
     }
 
     clearScreen() {
@@ -38,13 +36,11 @@ class Calculator {
         this.calc();
     }
 
-
     delete() {
         if (screen.textContent === '') return;
         screen.textContent = screen.textContent.slice(0, -1);
         this.calc();
     }
-
 
     equal() {
         let expression = [];
@@ -56,11 +52,8 @@ class Calculator {
 
         if (this.result === undefined) return;
 
-        console.log(`Equal Expression: ${expression}`);
-        console.log(`Equal Result: ${this.result}`);
         screen.textContent = this.decimalAmount();
     }
-
 
     calc() {
         this.operators = [];
@@ -77,33 +70,25 @@ class Calculator {
             }
         }
 
+        // Add first expression
         if (this.operators.length === 2) {
-            console.log(`Screen: ${screen.textContent}`);
             expression = screen.textContent.split(this.operators[0]);
 
             if (isNaN(expression[1][expression[1].length - 1])) {
-                console.log('not a number ');
                 expression[1] = expression[1].slice(0, -1);
-                console.log(`new number: ${expression[1]}`);
             }
-
-            console.log(`Expression: ${expression}`);
-
 
             this.num1 = parseFloat(expression[0]);
             this.num2 = parseFloat(expression[1]);
 
             this.doOperation(this.operators[0]);
             this.operators.shift();
-            console.log(`new operator list: ${this.operators}`);
-            console.log(`Result: ${this.result}`);
 
             screen.textContent = this.decimalAmount() + this.operators[0];
         }
-
-        console.log(this.operators);
     }
 
+    // Calculate numbers and set result
     doOperation(operator) {
         switch (operator) {
             case '+':
@@ -120,7 +105,7 @@ class Calculator {
                 break;
         }
     }
-
+// If result have a decimal set the max to 2 or return result untouched
     decimalAmount() {
         return String(this.result).includes('.') ? this.result.toFixed(2) : this.result.toFixed(0);
     }
@@ -131,6 +116,7 @@ const calculator = new Calculator();
 // Set theme from local storage if exists 
 document.addEventListener('DOMContentLoaded', () => getTheme());
 
+// Select theme
 selectTheme.addEventListener('input', e => chooseTheme(parseInt(e.target.value)));
 
 buttons.forEach((button) => {
@@ -138,17 +124,9 @@ buttons.forEach((button) => {
         calculator.updateScreen(button);
         calculator.calc();
 
-        if (button.classList.contains('reset')) {
-            calculator.clearScreen();
-
-        }
-        if (button.classList.contains('delete')) {
-            calculator.delete();
-        }
-
-        if (button.classList.contains('equal')) {
-            calculator.equal();
-        }
+        if (button.classList.contains('reset')) calculator.clearScreen();
+        if (button.classList.contains('delete')) calculator.delete();
+        if (button.classList.contains('equal')) calculator.equal();
     });
 });
 // Load theme from local storage
