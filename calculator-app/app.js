@@ -6,35 +6,148 @@ const buttons = document.querySelectorAll('button');
 const screen = document.querySelector('.number');
 
 const operations = ['+', '-', '/', 'x'];
-let result;
+
+class Calculator {
+
+    constructor() {
+        this.num1;
+        this.num2;
+        this.result;
+        this.operators;
+    }
+    // Update screen when any number or operator is pressed
+    updateScreen(button) {
+        const buttonValue = button.textContent;
+        const lastChar = parseInt(screen.textContent.slice(screen.textContent.length - 1));
+
+        if (button.classList.contains('misc')) return;
+
+        if (button.classList.contains('operator')) {
+            if (screen.textContent !== '' && !isNaN(lastChar)) {
+                screen.textContent += buttonValue;
+            }
+            return;
+        }
+        screen.textContent += buttonValue;
+        console.log(`typeof: ${typeof lastChar}`);
+        console.log(`lostchar : ${lastChar}`);
+    }
+
+    clearScreen() {
+        screen.textContent = '';
+        this.calc();
+    }
+
+
+    delete() {
+        if (screen.textContent === '') return;
+        screen.textContent = screen.textContent.slice(0, -1);
+        this.calc();
+    }
+
+
+    equal() {
+        let expression = [];
+        expression = screen.textContent.split(this.operators[0]);
+
+        this.num1 = parseFloat(expression[0]);
+        this.num2 = parseFloat(expression[1]);
+        this.doOperation(this.operators[0]);
+
+        if (this.result === undefined) return;
+
+        console.log(`Equal Expression: ${expression}`);
+        console.log(`Equal Result: ${this.result}`);
+        screen.textContent = this.decimalAmount();
+    }
+
+
+    calc() {
+        this.operators = [];
+        let expression = [];
+
+        for (let i = 0; i < screen.textContent.length; i++) {
+            if (
+                screen.textContent[i] === '+' ||
+                screen.textContent[i] === '-' ||
+                screen.textContent[i] === '/' ||
+                screen.textContent[i] === 'x'
+            ) {
+                this.operators.push(screen.textContent[i]);
+            }
+        }
+
+        if (this.operators.length === 2) {
+            console.log(`Screen: ${screen.textContent}`);
+            expression = screen.textContent.split(this.operators[0]);
+
+            if (isNaN(expression[1][expression[1].length - 1])) {
+                console.log('not a number ');
+                expression[1] = expression[1].slice(0, -1);
+                console.log(`new number: ${expression[1]}`);
+            }
+
+            console.log(`Expression: ${expression}`);
+
+
+            this.num1 = parseFloat(expression[0]);
+            this.num2 = parseFloat(expression[1]);
+
+            this.doOperation(this.operators[0]);
+            this.operators.shift();
+            console.log(`new operator list: ${this.operators}`);
+            console.log(`Result: ${this.result}`);
+
+            screen.textContent = this.decimalAmount() + this.operators[0];
+        }
+
+        console.log(this.operators);
+    }
+
+    doOperation(operator) {
+        switch (operator) {
+            case '+':
+                this.result = this.num1 + this.num2;
+                break;
+            case '-':
+                this.result = this.num1 - this.num2;
+                break;
+            case '/':
+                this.result = this.num1 / this.num2;
+                break;
+            case 'x':
+                this.result = this.num1 * this.num2;
+                break;
+        }
+    }
+
+    decimalAmount() {
+        return String(this.result).includes('.') ? this.result.toFixed(2) : this.result.toFixed(0);
+    }
+}
+
+const calculator = new Calculator();
 
 // Set theme from local storage if exists 
-document.addEventListener('DOMContentLoaded', () => {
-    getTheme();
-});
+document.addEventListener('DOMContentLoaded', () => getTheme());
 
-selectTheme.addEventListener('input', e => {
-    chooseTheme(parseInt(e.target.value));
-});
+selectTheme.addEventListener('input', e => chooseTheme(parseInt(e.target.value)));
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        updateScreen(button);
-        calculateValue();
+        calculator.updateScreen(button);
+        calculator.calc();
 
         if (button.classList.contains('reset')) {
-            clearScreen();
-            result = 0;
+            calculator.clearScreen();
 
         }
         if (button.classList.contains('delete')) {
-            deleteNumber();
+            calculator.delete();
         }
 
         if (button.classList.contains('equal')) {
-            if (result !== undefined) {
-                screen.textContent = result;
-            }
+            calculator.equal();
         }
     });
 });
@@ -42,9 +155,7 @@ buttons.forEach((button) => {
 function getTheme() {
     const theme = localStorage.getItem('theme');
 
-    if (theme === null) {
-        return;
-    }
+    if (theme === null) return;
     body.dataset.theme = theme;
 }
 
@@ -52,105 +163,4 @@ function getTheme() {
 function chooseTheme(selectedThemeIndex) {
     body.dataset.theme = themes[selectedThemeIndex];
     localStorage.setItem('theme', themes[selectedThemeIndex]);
-}
-
-// Update screen when any number or operator is pressed
-function updateScreen(button) {
-    const buttonValue = button.textContent;
-
-    if (button.classList.contains('misc')) return;
-
-    if (button.classList.contains('operator')) {
-        if (screen.textContent !== '') {
-            screen.textContent += buttonValue;
-        }
-        return;
-    }
-
-    screen.textContent += buttonValue;
-}
-
-function clearScreen() {
-    screen.textContent = '';
-}
-
-function deleteNumber() {
-    if (screen.textContent === '') return;
-
-    screen.textContent = screen.textContent.slice(0, -1);
-}
-
-
-function calculateValue() {
-    let num1, num2;
-
-    let operator = operations.filter((operator) => {
-        return screen.textContent.includes(operator);
-    });
-
-    if (operator.length >= 1) {
-
-        if (operator.length > 1) {
-            operator = operator.pop();
-        }
-
-        const operatorIndex = screen.textContent.indexOf(operator[0]);
-
-        prevNum = parseInt(screen.textContent[operatorIndex - 1]);
-        nextNum = parseInt(screen.textContent[operatorIndex + 1]);
-
-        // Make sure numbers before and after the operator are valid
-        if (!isNaN(prevNum) && !isNaN(nextNum)) {
-            const splitNumbers = screen.textContent.split(operator[0]);
-
-
-            num1 = parseFloat(splitNumbers[0]);
-            num2 = parseFloat(splitNumbers[1]);
-
-            console.log(num2);
-
-
-            doOperation(num1, num2, operator);
-        }
-        console.log(`Result: ${result}`);
-
-
-
-        // Check for a operation after complete expression then display result (result[operation])
-        if ((!isNaN(num2) || num2 !== undefined) &&
-            screen.textContent[screen.textContent.length - 1] === '+' ||
-            screen.textContent[screen.textContent.length - 1] === '-' ||
-            screen.textContent[screen.textContent.length - 1] === '/' ||
-            screen.textContent[screen.textContent.length - 1] === 'x'
-        ) {
-            console.log('update');
-            screen.textContent = result + screen.textContent.slice(-1);
-        }
-
-
-    }
-}
-
-// Do the calculation for the 2 numbers
-function doOperation(num1, num2, operator) {
-    switch (operator[0]) {
-        case '+':
-            result = num1 + num2;
-            break;
-
-        case '-':
-            result = num1 - num2;
-            break;
-
-        case '/':
-            result = num1 / num2;
-            break;
-
-        case 'x':
-            result = num1 * num2;
-            console.log('multiply');
-            break;
-    }
-
-    return result;
 }
