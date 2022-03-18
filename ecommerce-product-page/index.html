@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <img src="./images/logo.svg" alt="" class="navbar__logo">
+    <ul class="navbar__nav">
+      <li class="navbar__item"><a href="#" class="navbar__link">Collections</a></li>
+      <li class="navbar__item"><a href="#" class="navbar__link">Men</a></li>
+      <li class="navbar__item"><a href="#" class="navbar__link">Women</a></li>
+      <li class="navbar__item"><a href="#" class="navbar__link">About</a></li>
+      <li class="navbar__item"><a href="#" class="navbar__link">Contact</a></li>
+    </ul>
+    <div class="navbar__customer">
+      <img src="./images/icon-cart.svg" alt="shopping cart" class="navbar__cart">
+      <img src="./images/image-avatar.png" alt="user picture" class="navbar__account">
+    </div>
+  </nav>
+  <div class="divider"></div>
+
+  <section class="product">
+    <div class="container">
+      <div class="product__grid">
+        <img src="./images/image-product-1.jpg" alt="current product" class="product__img product__img--current">
+        <img src="./images/image-product-1.jpg" alt="product" class="product__img">
+        <img src="./images/image-product-2.jpg" alt="product" class="product__img">
+        <img src="./images/image-product-3.jpg" alt="product" class="product__img">
+        <img src="./images/image-product-4.jpg" alt="product" class="product__img">
+      </div>
+      <div class="product__content">
+        <p class="product__company">Sneaker Company</p>
+        <h1 class="product__name">Fall Limited Edition Sneakers</h1>
+        <p class="product__description">These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="product__pricing">
+          <p class="product__discount-price">$125.00 <span class="product__discount">50%</span></p>
+          <p class="product__original-price">$250.00</p>
+          <div class="product__quantity">
+            <div class="product__counter">
+              <button class="product__minus"><img src="./images/icon-minus.svg" alt="minus">-</button>
+              <input type="text" class="product__amount">
+              <button class="product__add"><img src="./images/icon-plus.svg" alt="plus">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
