@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+$font : 'Kumbh Sans',
+sans-serif;
+
+// Colors
+$orange: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+$dark-blue:hsl(220, 13%, 13%);
+$dark-gray-blue: hsl(219, 9%, 45%);
+$gray-blue: hsl(220, 14%, 75%);
+$light-blue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    position: relative;
+    font-family: $font;
+    font-size: 1.6rem;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    font-size: 1.6rem;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: 0.75;
+    z-index: 1;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 2.4rem;
+
+    &__burger {
+        width: 1.6rem;
+        height: 1.5rem;
+        margin-right: 1.6rem;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 100%;
+            height: .3rem;
+            background-color: $dark-gray-blue;
+        }
+
+        span:not(:last-child) {
+            margin-bottom: .3rem;
+        }
+
+
+    }
+
+    &__nav {
+        display: none;
+    }
+
+    &__mobile-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $white;
+        width: 67%;
+        height: 100%;
+        z-index: 2;
+        padding-left: 2.5rem;
+        padding-top: 2.5rem;
+
+        &--show-nav {
+            display: flex;
+        }
+    }
+
+    &__item {
+        margin-bottom: 2rem;
+    }
+
+    &__item:first-child {
+        margin-bottom: 5.4rem;
+    }
+
+    &__close {
+        cursor: pointer;
+    }
+
+    &__link {
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 1.44;
+        color: $black;
+    }
+
+    &__customer {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    &__cart,
+    &__account {
+        cursor: pointer;
+    }
+
+    &__account {
+        max-width: 2.4rem;
+        margin-left: 2.2rem;
+    }
+}
+
+.product {
+
+
+    &__grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 100%);
+        grid-template-rows: 1fr;
+        max-height: 30rem;
+    }
+
+    &__slider-navigation {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        top: 25%;
+        left: 0;
+        padding: 0 1.6rem;
+    }
+
+    &__previous,
+    &__next {
+        background-color: $white;
+        border-radius: 50%;
+        max-width: 4rem;
+        max-height: 4rem;
+        padding: 1.4rem;
+        cursor: pointer;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__img:first-child {
+        display: none;
+    }
+
+    &__content {
+        padding: 2.4rem;
+    }
+
+    &__company {
+        color: $orange;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: .185rem;
+        margin-bottom: 1.9rem;
+    }
+
+    &__name {
+        font-size: 2.8rem;
+        color: $dark-blue;
+        line-height: 1.14;
+        margin-bottom: 1.5rem;
+
+    }
+
+    &__description {
+        font-size: 1.5rem;
+        color: $dark-gray-blue;
+        line-height: 1.67;
+        margin-bottom: 2.4rem;
+    }
+
+    &__pricing {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.6rem;
+    }
+
+    &__discount-price {
+        display: flex;
+        align-items: center;
+        font-size: 2.8rem;
+        color: $dark-blue;
+        font-weight: bold;
+    }
+
+    &__discount {
+        font-size: 1.6rem;
+        color: $orange;
+        background-color: $pale-orange;
+        padding: .3rem .9rem;
+        border-radius: .6rem;
+        margin-left: 1.6rem;
+    }
+
+    &__original-price {
+        font-weight: bold;
+        color: $gray-blue;
+        text-decoration: line-through;
+    }
+
+    &__quantity {
+        margin-bottom: 8.8rem;
+    }
+
+    &__counter {
+        display: flex;
+        align-items: stretch;
+        background-color: $light-blue;
+        padding: 22px 24px 18px;
+        border-radius: 1rem;
+        margin-bottom: 1.6rem;
+    }
+
+    &__amount {
+        flex-grow: 2;
+        height: 100%;
+        -webkit-appearance: none;
+        border: none;
+        background-color: transparent;
+        font-weight: bold;
+        text-align: center;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__minus,
+    &__add {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &__add-to-cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        width: 100%;
+        background-color: $orange;
+        color: $white;
+        border: none;
+        padding: 1.8rem 0;
+        border-radius: 1rem;
+        box-shadow: 0 20px 50px -20px $orange;
+        cursor: pointer;
+    }
+
+    &__cart {
+        fill: $white;
+        margin-right: 1.5rem;
+
+    }
+
+}
