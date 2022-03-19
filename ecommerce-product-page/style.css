@@ -141,6 +141,7 @@ select {
   grid-template-columns: repeat(4, 100%);
   grid-template-rows: 1fr;
   max-height: 30rem;
+  height: 30rem;
 }
 .product__slider-navigation {
   display: flex;
@@ -158,13 +159,27 @@ select {
   max-height: 4rem;
   padding: 1.4rem;
   cursor: pointer;
+  z-index: 300;
 }
 .product__img {
+  position: absolute;
+  opacity: 0;
   width: 100%;
   height: 100%;
+  transition: transform 1s, opacity 0.5s, z-index 0.5s;
+  z-index: 100;
 }
-.product__img:first-child {
-  display: none;
+.product__img--current {
+  opacity: 1;
+  z-index: 200;
+}
+.product__img--before {
+  transform: translateX(-100%);
+  z-index: 150;
+}
+.product__img--after {
+  transform: translateX(100%);
+  z-index: 150;
 }
 .product__content {
   padding: 2.4rem;

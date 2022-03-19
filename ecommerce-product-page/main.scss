@@ -173,6 +173,8 @@ select {
         grid-template-columns: repeat(4, 100%);
         grid-template-rows: 1fr;
         max-height: 30rem;
+        height: 30rem;
+
     }
 
     &__slider-navigation {
@@ -193,16 +195,39 @@ select {
         max-height: 4rem;
         padding: 1.4rem;
         cursor: pointer;
+        z-index: 300;
     }
 
     &__img {
+        position: absolute;
+        opacity: 0;
         width: 100%;
         height: 100%;
+        transition: transform 1s, opacity .5s, z-index .5s;
+        z-index: 100;
+
+        &--current {
+            opacity: 1;
+            z-index: 200;
+        }
+
+        &--before {
+            transform: translateX(-100%);
+            z-index: 150;
+        }
+
+        &--after {
+
+            transform: translateX(100%);
+            z-index: 150;
+        }
     }
 
-    &__img:first-child {
-        display: none;
-    }
+
+
+    // &__img:first-child {
+    //     display: none;
+    // }
 
     &__content {
         padding: 2.4rem;
@@ -316,5 +341,4 @@ select {
         margin-right: 1.5rem;
 
     }
-
 }
