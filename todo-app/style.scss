@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+$font : 'Josefin Sans',
+sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: $font;
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+// Themes
+body[data-theme="light"] {
+    --primary: hsl(220, 98%, 61%);
+    --check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    --main-bg: hsl(0, 0%, 98%);
+    --todo-bg: hsl(0, 0%, 100%);
+    --todo-line: hsl(236, 33%, 92%);
+    --todo-completed: hsl(233, 11%, 84%);
+    --todo-secondary-text: hsl(236, 9%, 61%);
+    --todo-text: hsl(235, 19%, 35%);
+    --shadow: hsla(237, 20%, 80%, 0.5);
+
+    .todo__theme {
+        content: url('./images/icon-moon.svg');
+    }
+}
+
+body[data-theme="dark"] {
+    --primary: hsl(220, 98%, 61%);
+    --check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    --main-bg: hsl(235, 21%, 11%);
+    --todo-bg: hsl(235, 24%, 19%);
+    --todo-line: hsl(237, 14%, 26%);
+    --todo-completed: hsl(233, 14%, 35%);
+    --todo-secondary-text: hsl(235, 16%, 43%);
+    --todo-text: hsl(234, 39%, 85%);
+
+    .todo__theme {
+        content: url('./images/icon-sun.svg');
+    }
+
+
+    .todo__create-todo {
+        color: var(--todo-text);
+    }
+}
+
+body {
+    background-color: var(--main-bg);
+}
+
+main {
+    background: url('./images/bg-mobile-light.jpg') no-repeat fixed top;
+    padding: 4.8rem 2.4rem 7.2rem 2.4rem;
+}
+
+
+
+.todo {
+    &__bullet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        height: 2rem;
+        background-color: var(--todo-bg);
+        border: .1rem solid var(--todo-line);
+        border-radius: 5rem;
+        cursor: pointer;
+    }
+
+    &__create-todo,
+    &__list,
+    &__states {
+        box-shadow: 0 3.5rem 5rem -1.5rem var(--shadow);
+    }
+
+    &__header,
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__header {
+        margin-bottom: 4rem;
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+        color: var(--todo-bg);
+    }
+
+    &__todo-wrapper {
+        position: relative;
+        margin-bottom: 1.6rem;
+
+        .todo__bullet {
+            position: absolute;
+            top: 50%;
+            left: 2rem;
+            cursor: pointer;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__create-todo {
+        width: 100%;
+        padding: 1.8rem 0 1.8rem 5.2rem;
+        outline: none;
+        border: none;
+        border-radius: .5rem;
+        background-color: var(--todo-bg);
+        color: var(--todo-secondary-text);
+
+    }
+
+    &__list {
+        background-color: var(--todo-bg);
+        border-radius: .5rem .5rem 0 0;
+        box-shadow: 0 3.5rem 5rem -1.5rem var(--shadow);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        border-bottom: .1rem solid var(--todo-line);
+
+        &--completed {
+
+            .todo__bullet {
+                background: var(--check-bg);
+                border: none;
+            }
+
+            .todo__text {
+                text-decoration: line-through;
+                color: var(--todo-completed);
+            }
+        }
+    }
+
+    &__text {
+        margin-left: 1.2rem;
+        color: var(--todo-text);
+        cursor: pointer;
+    }
+
+    &__delete {
+        margin-left: auto;
+        max-width: 1.2rem;
+        color: var(--todo-text);
+        cursor: pointer;
+    }
+
+    &__footer {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 1.6rem 2rem 2.2rem 2rem;
+        color: var(--todo-secondary-text);
+        background-color: var(--todo-bg);
+        border-radius: 0 0 .5rem .5rem;
+    }
+
+    &__states {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem 0 1.9rem 0;
+        font-weight: bold;
+        font-size: 1.4rem;
+        background-color: var(--todo-bg);
+        margin-top: 1.6rem;
+        border-radius: .5rem;
+
+        >* {
+            transition: .2s color;
+
+            &:hover {
+                color: var(--todo-text);
+            }
+        }
+    }
+
+    &__all,
+    &__active,
+    &__completed,
+    &__clear {
+        cursor: pointer;
+    }
+
+    &__clear {
+        transition: .2s color;
+
+        &:hover {
+            color: var(--todo-text);
+        }
+    }
+
+    &__active {
+        margin: 0 1.9rem;
+    }
+
+    &--selected {
+        color: var(--primary);
+    }
+}

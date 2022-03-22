@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body[data-theme=light] {
+  --primary: hsl(220, 98%, 61%);
+  --check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --main-bg: hsl(0, 0%, 98%);
+  --todo-bg: hsl(0, 0%, 100%);
+  --todo-line: hsl(236, 33%, 92%);
+  --todo-completed: hsl(233, 11%, 84%);
+  --todo-secondary-text: hsl(236, 9%, 61%);
+  --todo-text: hsl(235, 19%, 35%);
+  --shadow: hsla(237, 20%, 80%, 0.5);
+}
+body[data-theme=light] .todo__theme {
+  content: url("./images/icon-moon.svg");
+}
+
+body[data-theme=dark] {
+  --primary: hsl(220, 98%, 61%);
+  --check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --main-bg: hsl(235, 21%, 11%);
+  --todo-bg: hsl(235, 24%, 19%);
+  --todo-line: hsl(237, 14%, 26%);
+  --todo-completed: hsl(233, 14%, 35%);
+  --todo-secondary-text: hsl(235, 16%, 43%);
+  --todo-text: hsl(234, 39%, 85%);
+}
+body[data-theme=dark] .todo__theme {
+  content: url("./images/icon-sun.svg");
+}
+body[data-theme=dark] .todo__create-todo {
+  color: var(--todo-text);
+}
+
+body {
+  background-color: var(--main-bg);
+}
+
+main {
+  background: url("./images/bg-mobile-light.jpg") no-repeat fixed top;
+  padding: 4.8rem 2.4rem 7.2rem 2.4rem;
+}
+
+.todo__bullet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--todo-bg);
+  border: 0.1rem solid var(--todo-line);
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.todo__create-todo, .todo__list, .todo__states {
+  box-shadow: 0 3.5rem 5rem -1.5rem var(--shadow);
+}
+.todo__header, .todo__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todo__header {
+  margin-bottom: 4rem;
+}
+.todo__heading {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  color: var(--todo-bg);
+}
+.todo__todo-wrapper {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+.todo__todo-wrapper .todo__bullet {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+.todo__create-todo {
+  width: 100%;
+  padding: 1.8rem 0 1.8rem 5.2rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--todo-bg);
+  color: var(--todo-secondary-text);
+}
+.todo__list {
+  background-color: var(--todo-bg);
+  border-radius: 0.5rem 0.5rem 0 0;
+  box-shadow: 0 3.5rem 5rem -1.5rem var(--shadow);
+}
+.todo__item {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border-bottom: 0.1rem solid var(--todo-line);
+}
+.todo__item--completed .todo__bullet {
+  background: var(--check-bg);
+  border: none;
+}
+.todo__item--completed .todo__text {
+  text-decoration: line-through;
+  color: var(--todo-completed);
+}
+.todo__text {
+  margin-left: 1.2rem;
+  color: var(--todo-text);
+  cursor: pointer;
+}
+.todo__delete {
+  margin-left: auto;
+  max-width: 1.2rem;
+  color: var(--todo-text);
+  cursor: pointer;
+}
+.todo__footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.6rem 2rem 2.2rem 2rem;
+  color: var(--todo-secondary-text);
+  background-color: var(--todo-bg);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.todo__states {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 0 1.9rem 0;
+  font-weight: bold;
+  font-size: 1.4rem;
+  background-color: var(--todo-bg);
+  margin-top: 1.6rem;
+  border-radius: 0.5rem;
+}
+.todo__states > * {
+  transition: 0.2s color;
+}
+.todo__states > *:hover {
+  color: var(--todo-text);
+}
+.todo__all, .todo__active, .todo__completed, .todo__clear {
+  cursor: pointer;
+}
+.todo__clear {
+  transition: 0.2s color;
+}
+.todo__clear:hover {
+  color: var(--todo-text);
+}
+.todo__active {
+  margin: 0 1.9rem;
+}
+.todo--selected {
+  color: var(--primary);
+}
+
+/*# sourceMappingURL=style.css.map */
