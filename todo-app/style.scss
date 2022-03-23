@@ -37,6 +37,9 @@ a {
     text-decoration: none;
 }
 
+
+
+
 // Themes
 body[data-theme="light"] {
     --primary: hsl(220, 98%, 61%);
@@ -64,8 +67,17 @@ body[data-theme="dark"] {
     --todo-secondary-text: hsl(235, 16%, 43%);
     --todo-text: hsl(234, 39%, 85%);
 
+    main {
+        background: url('./images/bg-mobile-dark.jpg');
+        max-height: 20rem;
+    }
+
     .todo__theme {
         content: url('./images/icon-sun.svg');
+    }
+
+    .todo__heading {
+        color: white;
     }
 
 
@@ -80,12 +92,16 @@ body {
 
 main {
     background: url('./images/bg-mobile-light.jpg') no-repeat fixed top;
+    background-size: 100%;
     padding: 4.8rem 2.4rem 7.2rem 2.4rem;
 }
 
 
 
 .todo {
+    max-width: 54rem;
+    margin: 0 auto;
+
     &__bullet {
         display: flex;
         justify-content: center;
@@ -96,6 +112,10 @@ main {
         border: .1rem solid var(--todo-line);
         border-radius: 5rem;
         cursor: pointer;
+
+        img {
+            display: none;
+        }
     }
 
     &__create-todo,
@@ -120,6 +140,10 @@ main {
         text-transform: uppercase;
         letter-spacing: 1rem;
         color: var(--todo-bg);
+    }
+
+    &__theme {
+        cursor: pointer;
     }
 
     &__todo-wrapper {
@@ -163,6 +187,10 @@ main {
             .todo__bullet {
                 background: var(--check-bg);
                 border: none;
+
+                img {
+                    display: block;
+                }
             }
 
             .todo__text {
@@ -240,5 +268,35 @@ main {
 
     &--selected {
         color: var(--primary);
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    main {
+        position: relative;
+        min-height: 30rem;
+    }
+
+    .todo {
+        position: absolute;
+        top: 36%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
+    body[data-theme="light"] {
+        main {
+            background: url('./images/bg-desktop-light.jpg') no-repeat fixed top;
+            background-size: 100% 30rem;
+        }
+    }
+
+    body[data-theme="dark"] {
+        main {
+            background: url('./images/bg-desktop-dark.jpg') no-repeat fixed top;
+            background-size: 100% 30rem;
+        }
     }
 }

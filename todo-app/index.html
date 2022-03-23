@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js" defer></script>
   <title>Frontend Mentor | Todo app</title>
 </head>
 
@@ -21,26 +22,12 @@
         <input type="text" class="todo__create-todo" placeholder="Create a new todo...">
       </div>
       <ul class="todo__list">
-        <li class="todo__item">
-          <div class="todo__bullet"></div>
-          <span class="todo__text">Complete online JavaScript course</span>
-          <img src="./images/icon-cross.svg" alt="" class="todo__delete">
-        </li>
-        <li class="todo__item">
-          <div class="todo__bullet"></div>
-          <span class="todo__text">10 minutes meditation</span>
-          <img src="./images/icon-cross.svg" alt="" class="todo__delete">
-        </li>
-        <li class="todo__item todo__item--completed">
-          <div class="todo__bullet"><img src="./images/icon-check.svg" alt=""></div>
-          <span class="todo__text">Read for 1 hour</span>
-          <img src="./images/icon-cross.svg" alt="" class="todo__delete">
-        </li>
+      
       </ul>
       <div class="todo__footer">
-        <p class="todo__todos-left">5 items left</p>
+        <p class="todo__todos-left">0 items left</p>
         <ul class="todo__states">
-          <li class="todo__all">All</li>
+          <li class="todo__all todo--selected">All</li>
           <li class="todo__active">Active</li>
           <li class="todo__completed">Completed</li>
         </ul>
