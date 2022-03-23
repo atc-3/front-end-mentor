@@ -223,6 +223,7 @@ main {
   main {
     position: relative;
     min-height: 30rem;
+    image-rendering: -webkit-optimize-contrast;
   }
 
   .todo {
@@ -241,6 +242,11 @@ main {
   body[data-theme=dark] main {
     background: url("./images/bg-desktop-dark.jpg") no-repeat fixed top;
     background-size: 100% 30rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  main {
+    background-size: 100%;
   }
 }
 
