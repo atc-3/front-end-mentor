@@ -5,12 +5,10 @@ const randomQuoteButton = document.querySelector('.advice__change-quote');
 randomQuoteButton.addEventListener('click', getQuote);
 
 async function getQuote() {
-    console.log('clicked');
     let response = await fetch(`https://api.adviceslip.com/advice?t=${Math.random()}`);
 
     if (response.status === 200) {
         let data = await response.json();
-        console.log(data);
         setQuote(data.slip);
     }
 }
